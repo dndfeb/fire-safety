@@ -147,6 +147,13 @@ html.has-scroll-dragging {
   @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
+/* Tablet-specific button styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
 .btn-primary {
   @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 shadow-fire;
 }

@@ -116,7 +116,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative h-[85vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24"
       style={{
         backgroundImage: `url('/fire safety images for the hero section bg.jpg')`,
         backgroundSize: 'cover',
@@ -137,13 +137,13 @@ export default function Hero() {
         ></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
             <h1
               ref={titleRef}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
               Protect What Matters Most —{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-300">
@@ -154,7 +154,7 @@ export default function Hero() {
             
             <p
               ref={subtitleRef}
-              className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
               Professional fire safety equipment, installation, and emergency response services. 
               Your safety is our priority with certified technicians and reliable protection systems.
@@ -162,24 +162,24 @@ export default function Hero() {
 
             <div
               ref={ctaRef}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
             >
               <Link
                 href="/services"
-                className="btn btn-accent text-lg px-8 py-4 hover:scale-105 transform transition-all duration-300"
+                className="btn btn-accent text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 hover:scale-105 transform transition-all duration-300"
               >
                 Explore Our Services
               </Link>
               <Link
                 href="/about"
-                className="btn btn-secondary text-lg px-8 py-4 hover:scale-105 transform transition-all duration-300 bg-white/20 text-white border-white/30 hover:bg-white/30"
+                className="btn btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 hover:scale-105 transform transition-all duration-300 bg-white/20 text-white border-white/30 hover:bg-white/30"
               >
                 Learn More
               </Link>
             </div>
 
             {/* Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-8 max-w-md mx-auto lg:mx-0">
+            <div className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto lg:mx-0">
               <div className="text-center">
                 <div className="flex justify-center mb-2">
                   <svg className="h-6 w-6 text-accent-500" fill="currentColor" viewBox="0 0 24 24">
@@ -211,10 +211,10 @@ export default function Hero() {
           </div>
 
           {/* Shield Verification Badge */}
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center mt-8 lg:mt-0">
             <div
               ref={imageRef}
-              className="relative w-80 h-96 lg:w-96 lg:h-[500px]"
+              className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[500px]"
               style={{
                 clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
               }}
@@ -249,18 +249,18 @@ export default function Hero() {
                 </div>
                 
                 {/* Verification text */}
-                <div className="text-center space-y-4">
-                  <div className="text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl">
+                <div className="text-center space-y-3 sm:space-y-4">
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-white drop-shadow-2xl">
                     <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300 bg-clip-text text-transparent">
                       VERIFIED
                     </span>
                   </div>
-                  <div className="text-lg font-semibold text-white/90 tracking-wide drop-shadow-lg">
+                  <div className="text-base sm:text-lg font-semibold text-white/90 tracking-wide drop-shadow-lg">
                     Fire Safety Certified
                   </div>
                   
                   {/* Certification details */}
-                  <div className="space-y-2 mt-6">
+                  <div className="space-y-1 sm:space-y-2 mt-4 sm:mt-6">
                     <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 text-sm font-medium text-white border border-white/30">
                       ✓ NFPA Certified
                     </div>
@@ -273,8 +273,8 @@ export default function Hero() {
                   </div>
                   
                   {/* Trust indicator */}
-                  <div className="mt-6 text-center">
-                    <div className="text-sm text-white/80">Trusted by 500+ Businesses</div>
+                  <div className="mt-4 sm:mt-6 text-center">
+                    <div className="text-xs sm:text-sm text-white/80">Trusted by 500+ Businesses</div>
                     <div className="flex justify-center mt-2">
                       <div className="flex space-x-1">
                         {[...Array(5)].map((_, i) => (
@@ -290,23 +290,23 @@ export default function Hero() {
             </div>
 
             {/* Floating verification elements */}
-            <div className="absolute -top-6 -right-6 w-12 h-12 bg-orange-500 rounded-full animate-emergency-pulse shadow-lg shadow-orange-500/50 flex items-center justify-center">
-              <svg className="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-8 h-8 sm:w-12 sm:h-12 bg-orange-500 rounded-full animate-emergency-pulse shadow-lg shadow-orange-500/50 flex items-center justify-center">
+              <svg className="h-4 w-4 sm:h-6 sm:w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
               </svg>
             </div>
-            <div className="absolute -bottom-6 -left-6 w-10 h-10 bg-red-500 rounded-full animate-emergency-pulse delay-1000 shadow-lg shadow-red-500/50 flex items-center justify-center">
-              <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-6 h-6 sm:w-10 sm:h-10 bg-red-500 rounded-full animate-emergency-pulse delay-1000 shadow-lg shadow-red-500/50 flex items-center justify-center">
+              <svg className="h-3 w-3 sm:h-5 sm:w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
               </svg>
             </div>
             
             {/* Additional verification elements */}
-            <div className="absolute top-1/4 -left-3 w-6 h-6 bg-orange-400 rounded-full animate-flame-flicker delay-500 flex items-center justify-center">
-              <div className="w-2 h-2 bg-white rounded-full"></div>
+            <div className="absolute top-1/4 -left-2 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 bg-orange-400 rounded-full animate-flame-flicker delay-500 flex items-center justify-center">
+              <div className="w-1 h-1 sm:w-2 sm:h-2 bg-white rounded-full"></div>
             </div>
-            <div className="absolute bottom-1/3 -right-3 w-4 h-4 bg-red-400 rounded-full animate-flame-flicker delay-700 flex items-center justify-center">
-              <div className="w-1 h-1 bg-white rounded-full"></div>
+            <div className="absolute bottom-1/3 -right-2 sm:-right-3 w-3 h-3 sm:w-4 sm:h-4 bg-red-400 rounded-full animate-flame-flicker delay-700 flex items-center justify-center">
+              <div className="w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white rounded-full"></div>
             </div>
             
             {/* Verification light effect */}
@@ -316,9 +316,9 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/60 rounded-full flex justify-center">
+          <div className="w-0.5 h-2 sm:w-1 sm:h-3 bg-white/60 rounded-full mt-1.5 sm:mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>

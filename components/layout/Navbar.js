@@ -104,7 +104,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className={`navbar rounded-2xl px-6 py-4 transition-all duration-300 ${
+        <div className={`navbar rounded-2xl px-4 sm:px-6 py-3 sm:py-4 transition-all duration-300 ${
           isScrolled
             ? 'bg-white/95 backdrop-blur-md shadow-fire-lg'
             : 'bg-white/90 backdrop-blur-sm shadow-fire'
@@ -112,13 +112,13 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" className="text-2xl font-bold text-neutral-900">
+              <Link href="/" className="text-xl sm:text-2xl font-bold text-neutral-900">
                 <span className="text-primary-500">Fire</span>Guard
               </Link>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <div className="ml-10 flex items-baseline space-x-8">
                 {navItems.map((item) => (
                   <Link
@@ -139,11 +139,43 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* Tablet Navigation - Compact version */}
+            <div className="hidden md:block lg:hidden">
+              <div className="ml-6 flex items-baseline space-x-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`flex items-center gap-1 px-2 py-2 text-xs font-medium transition-colors duration-200 ${
+                      isActive(item.href)
+                        ? 'text-primary-500'
+                        : 'text-neutral-700 hover:text-primary-500'
+                    }`}
+                  >
+                    <span className="flex-shrink-0">
+                      {item.icon}
+                    </span>
+                    <span className="hidden sm:inline">{item.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Button - Desktop */}
+            <div className="hidden lg:block">
               <Link
                 href="/contact"
                 className="btn btn-primary"
+              >
+                Get Quote
+              </Link>
+            </div>
+
+            {/* CTA Button - Tablet */}
+            <div className="hidden md:block lg:hidden">
+              <Link
+                href="/contact"
+                className="px-4 py-2 text-xs font-medium bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               >
                 Get Quote
               </Link>
